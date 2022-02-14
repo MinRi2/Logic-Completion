@@ -1,0 +1,9 @@
+{
+	"name": "logic-completion",
+	"displayName": "LogicCompletion",
+	"author": "miner",
+	"description": "A mindustry mod for logic",
+	"version": "2.0",
+	"hidden": true,
+	"minGameVersion": 135,
+}
