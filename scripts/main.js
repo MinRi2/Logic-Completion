@@ -79,7 +79,7 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
 	// override "edit" button
 	let cell = getCell(buttons.find("edit"));
 	let editDialog = new BaseDialog("@editor.export");
-    editDialog.cont.pane(p => {
+        editDialog.cont.pane(p => {
         p.margin(10);
         p.table(Tex.button, t => {
             let style = Styles.cleart;
@@ -94,7 +94,7 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
                 editDialog.hide();
                 try{
                     canvas.load(app.getClipboardText().replace("\r\n", "\n"));
-				}catch(e){
+		}catch(e){
                     ui.showErrorMessage("" + e);
                 }
             }).marginLeft(12).disabled(b => app.getClipboardText() == null);
@@ -102,8 +102,8 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
             t.button("@schematic.copy.add", Icon.download, style, () => {
             	editDialog.hide();
             	try{
-            		let asm = app.getClipboardText().replace("\r\n", "\n");
-            		let statements = LAssembler.read(asm);
+                        let asm = app.getClipboardText().replace("\r\n", "\n");
+                        let statements = LAssembler.read(asm);
             		let size = canvas.statements.getChildren().size;
             		statements.each(st => {
             			if(st instanceof LStatements.JumpStatement) st.destIndex += size;
@@ -131,13 +131,13 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
 	dialog.update(() => {
         if(scene.hasField() && !myTable.shown()){
         	target = scene.getKeyboardFocus();
-        	Core.app.post(() => showFor(lastTarget));
+        	Core.app.post(() => showFor(target));
         }
     });
 }));
 
 function typeColor(s){
-	let objval = s.objval;
+    let objval = s.objval;
     return s.constant ? Pal.health :
     !s.isobj ? Pal.place :
     objval == null ? Color.darkGray :
@@ -150,7 +150,7 @@ function typeColor(s){
 }
 
 function typeName(s){
-	let objval = s.objval;
+    let objval = s.objval;
     return s.constant ? "constant" :
     !s.isobj ? "number" :
     objval == null ? "null" :
