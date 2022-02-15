@@ -20,10 +20,8 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
 	let dialog = ui.logic;
 	let target = null;
 	
-	let field = Reflect.get(dialog, "executor");
-	
 	let showFor = (elem) => {
-		let executor = field.get(dialog);
+		let executor = Reflect.get(dialog, "executor");
 		
 		// executor maybe null
 		if(executor == null) return;
