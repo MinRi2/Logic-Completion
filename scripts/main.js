@@ -143,7 +143,7 @@ function typeColor(s){
     objval instanceof Content ? Pal.logicOperations :
     objval instanceof Building ? Pal.logicBlocks :
     objval instanceof Unit ? Pal.logicUnits :
-    objval instanceof Enum ? Pal.logicIo :
+    objval instanceof java.lang.Enum ? Pal.logicIo :
     Color.white;
 }
 
@@ -156,7 +156,7 @@ function typeName(s){
     objval instanceof Content ? "content" :
     objval instanceof Building ? "building" :
     objval instanceof Unit ? "unit" :
-    objval instanceof Enum ? "enum" :
+    objval instanceof java.lang.Enum ? "enum" :
     "unknown";
 }
 
