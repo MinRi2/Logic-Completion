@@ -91,7 +91,7 @@ Events.on(EventType.ClientLoadEvent, cons(e => {
             t.button("@schematic.copy.import", Icon.download, style, () => {
                 editDialog.hide();
                 try{
-                    canvas.load(app.getClipboardText().replace("\r\n", "\n"));
+                    canvas.load(app.getClipboardText().replace(/\r\n/g, "\n"));
 		}catch(e){
                     ui.showErrorMessage("" + e);
                 }
